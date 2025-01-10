@@ -2,7 +2,7 @@
 
 ---
 
-Proyecto 1:
+Proyecto 1 (tienda de guitarras con carrito de la compra persistente): https://keen-seahorse-734ab6.netlify.app/
 
 Proyecto 2:
 
