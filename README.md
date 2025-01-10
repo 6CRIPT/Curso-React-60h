@@ -2,7 +2,7 @@
 
 ---
 
-Proyecto 1:
+Proyecto 1 (tienda de guitarras con carrito de la compra persistente): https://keen-seahorse-734ab6.netlify.app/
 
 Proyecto 2:
 
@@ -21,3 +21,9 @@ Proyecto 8:
 Proyecto 9:
 
 Proyecto 10:
+
+## Comando para construir un proyecto
+``` npm run build ```
+
+## Comando para lanzar un proyecto
+``` npm run dev ```
