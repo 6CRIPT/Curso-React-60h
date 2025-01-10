@@ -21,3 +21,6 @@ Proyecto 8:
 Proyecto 9:
 
 Proyecto 10:
+
+## Comando para construir un proyecto
+``` npm run build ```
