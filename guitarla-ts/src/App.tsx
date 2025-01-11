@@ -1,5 +1,5 @@
-import Header from "./components/Header";
-import Guitar from "./components/Guitar";
+import Header from "./components/Header.js";
+import Guitar from "./components/Guitar.js";
 import {useCart} from './hooks/useCart.js'
 
 function App() {
@@ -35,8 +35,6 @@ function App() {
   // useEffect(() => { //pero de normal con APIs y tal, mejor useEffect.
   //   setData(db)
   // }, [])
-
-
 
 
   return (
