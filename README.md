@@ -22,6 +22,9 @@ Proyecto 9:
 
 Proyecto 10:
 
+## Comando para crear un proyecto
+``` npm create vite@latest ``` --> nombre --> React --> Typescript + SWC --> ```cd nombre``` --> ```npm install``` --> ```npm run dev```
+
 ## Comando para construir un proyecto
 ``` npm run build ```
 
