@@ -4,7 +4,7 @@
 
 Proyecto 1 (tienda de guitarras con carrito de la compra persistente): https://keen-seahorse-734ab6.netlify.app/
 
-Proyecto 2: https://calculadora-propinas-cesar.netlify.app/
+Proyecto 2 (calculadora de propinas y pedidos): https://calculadora-propinas-cesar.netlify.app/
 
 Proyecto 3:
 
