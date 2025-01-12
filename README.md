@@ -30,3 +30,6 @@ Proyecto 10:
 
 ## Comando para lanzar un proyecto
 ``` npm run dev ```
+
+## Instalar tailwindCSS en un proyecto
+```npm i -D tailwindcss postcss autoprefixer``` --> ``` npm i -D tailwindcss postcss autoprefixer  ``` --> ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],```
