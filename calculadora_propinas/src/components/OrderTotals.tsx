@@ -1,6 +1,7 @@
 import { formatCurrency } from "../helpers"
 import { OrderItem } from "../types"
-import { useMemo, useCallback } from 'react'
+import { useCallback } from 'react'
+//import { useMemo } from 'react'
 
 type OrderTotalsProps = {
     order: OrderItem[]
