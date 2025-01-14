@@ -4,9 +4,9 @@
 
 Proyecto 1 (tienda de guitarras con carrito de la compra persistente): https://keen-seahorse-734ab6.netlify.app/
 
-Proyecto 2:
+Proyecto 2 (calculadora de propinas y pedidos): https://calculadora-propinas-cesar.netlify.app/
 
-Proyecto 3:
+Proyecto 3 (calculadora de calorias, importante useReducer y localStorage): https://calorie-tracker-cesar.netlify.app/
 
 Proyecto 4:
 
@@ -30,3 +30,9 @@ Proyecto 10:
 
 ## Comando para lanzar un proyecto
 ``` npm run dev ```
+
+## Instalar tailwindCSS en un proyecto
+```npm i -D tailwindcss postcss autoprefixer``` --> ``` npm i -D tailwindcss postcss autoprefixer  ``` --> ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],``` --> en index.css pon ```@tailwind base;
+@tailwind components;
+@tailwind utilities;```
+
