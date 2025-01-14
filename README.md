@@ -6,7 +6,7 @@ Proyecto 1 (tienda de guitarras con carrito de la compra persistente): https://k
 
 Proyecto 2 (calculadora de propinas y pedidos): https://calculadora-propinas-cesar.netlify.app/
 
-Proyecto 3:
+Proyecto 3 (calculadora de calorias, importante useReducer y localStorage): https://calorie-tracker-cesar.netlify.app/
 
 Proyecto 4:
 
