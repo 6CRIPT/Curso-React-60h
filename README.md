@@ -32,7 +32,11 @@ Proyecto 10:
 ``` npm run dev ```
 
 ## Instalar tailwindCSS en un proyecto
-```npm i -D tailwindcss postcss autoprefixer``` --> ``` npm i -D tailwindcss postcss autoprefixer  ``` --> ```npx tailwindcss init -p``` --> En tailwind.config ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],``` --> en index.css pon ```@tailwind base;
+1) ```npm i -D tailwindcss postcss autoprefixer``` 
+2) ``` npm i -D tailwindcss postcss autoprefixer  ``` 
+3) ```npx tailwindcss init -p``` 
+4) En tailwind.config ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],``` 
+5) En index.css pon ```@tailwind base;
 @tailwind components;
 @tailwind utilities;```
 
