@@ -40,3 +40,8 @@ Proyecto 10:
 @tailwind components;
 @tailwind utilities;```
 
+## Útiles
+1)  ```npm i @headlessui/react``` (para ventanas modales)
+2)  ```npm i @heroicons/react``` (para iconos)
+3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
+
