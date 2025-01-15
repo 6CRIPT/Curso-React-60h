@@ -43,5 +43,5 @@ Proyecto 10:
 ## Útiles
 1)  ```npm i @headlessui/react``` (para ventanas modales)
 2)  ```npm i @heroicons/react``` (para iconos)
-3)  ```npm i react-date-picker``` (fechas)
+3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
 
