@@ -1,10 +1,19 @@
-import { useContext } from "react"
 import BudgetForm from "./components/BudgetForm"
-import { BudgetContext } from "./context/BudgetContext"
+import BudgetTracker from "./components/BudgetTracker"
+import { useBudget } from "./hooks/useBudget"
+import { useMemo } from "react"
+import ExpenseModal from "./components/ExpenseModal"
+
 
 function App() {
 
-  const context = useContext(BudgetContext) //creamos el contexto del tipo que acabamos de hacer
+  //const context = useContext(BudgetContext) //creamos el contexto del tipo que acabamos de hacer
+
+  const { state } = useBudget()
+
+  const isValidBudget = useMemo(() => ( // se usan parentesis porque directamente queremos devolver la comparacion, con {} es el cuerpo de la funcion y habria que hacer un return
+    state.budget > 0
+  ), [state.budget])
 
   return (
     <>
@@ -15,8 +24,16 @@ function App() {
       </header>
 
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-10">
-        <BudgetForm/>
+        {isValidBudget ? <BudgetTracker /> : <BudgetForm />}
       </div>
+      {isValidBudget && ( // esto es como un ternario pero solo tienes la primera parte, el if
+        <main className="max-w-3xl mx-auto py-10">
+          
+
+          <ExpenseModal />
+        </main>
+      )}
+
     </>
   )
 }

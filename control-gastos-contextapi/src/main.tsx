@@ -6,7 +6,7 @@ import { BudgetProvider } from './context/BudgetContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BudgetProvider> //para que la contextApi abrace toda la app
+    <BudgetProvider> {/* para que la contextApi abrace toda la app */}
       <App />
     </BudgetProvider>
   </StrictMode>,
