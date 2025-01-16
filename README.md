@@ -45,5 +45,5 @@ Proyecto 10:
 2)  ```npm i @heroicons/react``` (para iconos)
 3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
 4)  ```npm i uuid``` (para generar ID unicas)
-5)  ```npm i react-swipeable-list``` (los swipe hacia los lados para dispatchs)
+5)  ```npm i react-swipeable-list``` --> ```npm install prop-types``` (los swipe hacia los lados para dispatchs)
 
