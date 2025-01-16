@@ -46,4 +46,5 @@ Proyecto 10:
 3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
 4)  ```npm i uuid``` (para generar ID unicas)
 5)  ```npm i react-swipeable-list``` --> ```npm install prop-types``` (los swipe hacia los lados para dispatchs)
+6)  ```npm i react-circular-progressbar``` (ciruculo de progreso)
 
