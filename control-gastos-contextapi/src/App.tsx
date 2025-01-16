@@ -1,9 +1,10 @@
 import BudgetForm from "./components/BudgetForm"
 import BudgetTracker from "./components/BudgetTracker"
 import { useBudget } from "./hooks/useBudget"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import ExpenseModal from "./components/ExpenseModal"
 import ExpenseList from "./components/ExpenseList" 
+import FilterByCategory from "./components/FilterByCategory"
 
 
 function App() {
@@ -15,6 +16,11 @@ function App() {
   const isValidBudget = useMemo(() => ( // se usan parentesis porque directamente queremos devolver la comparacion, con {} es el cuerpo de la funcion y habria que hacer un return
     state.budget > 0
   ), [state.budget])
+
+  useEffect(() => { //mantener el storage para evitar perder la info al resetear
+    localStorage.setItem('budget', state.budget.toString())
+    localStorage.setItem('expenses', JSON.stringify(state.expenses))
+  }, [state])
 
   return (
     <>
@@ -29,6 +35,7 @@ function App() {
       </div>
       {isValidBudget && ( // esto es como un ternario pero solo tienes la primera parte, el if
         <main className="max-w-3xl mx-auto py-10">
+          <FilterByCategory/>
           <ExpenseList/>
           <ExpenseModal />
         </main>

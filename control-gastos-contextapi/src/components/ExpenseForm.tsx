@@ -1,5 +1,5 @@
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import type { DraftExpense, Value } from "../types";
 import { categories } from "../data/categories";
 import DatePicker from 'react-date-picker';
@@ -9,6 +9,8 @@ import ErrorMessage from "./ErrorMessage";
 import { useBudget } from "../hooks/useBudget";
 
 export default function ExpenseForm() {
+
+
     const [expense, setExpense] = useState<DraftExpense>({
         amount: 0,
         expenseName: '',
@@ -17,8 +19,16 @@ export default function ExpenseForm() {
     })
 
     const [error, setError] = useState('')
+    const [previousAmount, setPreviousAmount] = useState(0)
+    const { dispatch, state, remainingBudget } = useBudget()
 
-    const {dispatch} = useBudget()
+    useEffect(() => {
+        if (state.editingId) { //hay que hacer este if pq el useEffect siempre se ejecuta al cargar la pagina por tanto, debemos comprobar que se ha ejecutado porque hay un editingId y no porque la pagina se ha cargado
+            const editingExpense = state.expenses.filter(currentExpense => currentExpense.id === state.editingId)[0]
+            setExpense(editingExpense) //metemos en el form el gasto que tenemos en editingId
+            setPreviousAmount(editingExpense.amount) //para guardar el amount de la que estamos editando y no perderla 
+        }
+    }, [state.editingId])
 
     const handleChangeDate = (value: Value) => {
         setExpense({
@@ -28,7 +38,7 @@ export default function ExpenseForm() {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
-        const {name, value} = e.target //como este handler nos va a servir para los inputs en general, entonces tenemos que extraer primero su atributo de name y de value, para saber que input está cambiando y su valor
+        const { name, value } = e.target //como este handler nos va a servir para los inputs en general, entonces tenemos que extraer primero su atributo de name y de value, para saber que input está cambiando y su valor
         const isAmountField = ['amount'].includes(name)
         setExpense({
             ...expense,
@@ -39,15 +49,29 @@ export default function ExpenseForm() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         //validar que todos los campos estan correctos
-        if(Object.values(expense).includes('')){ // si algun campo contiene la cadena vacia, significa que esta vacio
+        if (Object.values(expense).includes('')) { // si algun campo contiene la cadena vacia, significa que esta vacio
             setError('Error: Debes rellenar todos los campos.')
             return // retornamos vacio
         }
-        //en caso de que todo esté bien
-        dispatch({
-            type: 'add-expense',
-            payload: {expense} // le pasamos el state de expense
-        })
+
+        //validar que no me pase del limite
+        if ((expense.amount - previousAmount) > remainingBudget) { // teniamos una accion a $200, la queremos editar a $400. Y teniamos disponibles $100 restantes. Por tanto, $400 - $200 (la diferencia de precio) > $100 disponibles, NOS PASAMOS.
+            setError('No queda suficiente dinero en el presupuesto')
+            return // retornamos vacio
+        }
+
+        //en caso de que todo esté bien AÑADIR O ACTUALIZAR EXPENSE
+        if (state.editingId) {
+            dispatch({
+                type: 'update-expense',
+                payload: { expense: { id: state.editingId, ...expense } } // le pasamos el state de expense + la id para editarla
+            })
+        } else {
+            dispatch({
+                type: 'add-expense',
+                payload: { expense } // le pasamos el state de expense
+            })
+        }
 
         //reiniciar el State
         setExpense({
@@ -56,12 +80,13 @@ export default function ExpenseForm() {
             category: '',
             date: new Date()
         })
+        setPreviousAmount(0) //resetear el previous amount para las futuras ediciones
     }
 
     return (
         <form className="space-y-5" onSubmit={handleSubmit}>
             <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
-                Nuevo gasto
+                {state.editingId ? 'Guardar gasto' : 'Nuevo gasto' /* si estamos editando, entonces uno, si no, el otro*/}
             </legend>
 
             {error && <ErrorMessage> {error} </ErrorMessage>}
@@ -136,7 +161,7 @@ export default function ExpenseForm() {
 
             <input type="submit"
                 className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
-                value='Registrar gasto'
+                value={state.editingId ? 'Guardar gasto' : 'Registrar gasto' /* si estamos editando, entonces uno, si no, el otro*/}
             />
         </form>
     )
