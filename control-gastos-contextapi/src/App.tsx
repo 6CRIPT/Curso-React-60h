@@ -3,6 +3,7 @@ import BudgetTracker from "./components/BudgetTracker"
 import { useBudget } from "./hooks/useBudget"
 import { useMemo } from "react"
 import ExpenseModal from "./components/ExpenseModal"
+import ExpenseList from "./components/ExpenseList" 
 
 
 function App() {
@@ -28,8 +29,7 @@ function App() {
       </div>
       {isValidBudget && ( // esto es como un ternario pero solo tienes la primera parte, el if
         <main className="max-w-3xl mx-auto py-10">
-          
-
+          <ExpenseList/>
           <ExpenseModal />
         </main>
       )}
