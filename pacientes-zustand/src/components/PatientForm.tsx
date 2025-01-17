@@ -1,14 +1,60 @@
-import { Message, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import Error from './Error'
 import { PatientDraft } from '../types'
+import { usePatientStore } from '../store'
+import { useEffect } from 'react'
+import {toast, Bounce} from 'react-toastify'
 
 export default function PatientForm() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<PatientDraft>()
+    const { addPatient, activeId, patients, updatePatient } = usePatientStore()
+
+    const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<PatientDraft>()
+
+    useEffect(() => {
+        if (activeId) {
+            const activePatient = patients.filter(patient => patient.id === activeId)[0]
+            setValue('name', activePatient.name) //para poner el paciente a editar directamente en el formulario
+            setValue('caretaker', activePatient.caretaker) //para poner el paciente a editar directamente en el formulario
+            setValue('email', activePatient.email) //para poner el paciente a editar directamente en el formulario
+            setValue('date', activePatient.date) //para poner el paciente a editar directamente en el formulario
+            setValue('symptoms', activePatient.symptoms) //para poner el paciente a editar directamente en el formulario
+
+        }
+    }, [activeId])
 
     const registerPacient = (data: PatientDraft) => { //data es todo el contenido del form que el usuario registro
-
+        if (activeId) { //si hay un activeId (queremos editar)
+            updatePatient(data) //entonces solo actualizamos el paciente con dicha id
+            toast.success('Paciente actualizado correctamente.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
+        } else {
+            addPatient(data)
+            toast.success('Paciente registrado correctamente.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
+        }
+        reset() //reinicia el formulario
     }
+
+
 
     return (
         <div className="md:w-1/2 lg:w-2/5 mx-5">
@@ -35,10 +81,10 @@ export default function PatientForm() {
                         placeholder="Nombre del Paciente"
                         {...register('name', {
                             required: 'El nombre del paciente es obligatorio',
-                            maxLength: {
-                                value: 20,
-                                message: 'Máximo 20 caractéres'
-                            } //maximo de caracterers
+                            // maxLength: {
+                            //     value: 20,
+                            //     message: 'Máximo 20 caractéres'
+                            // } //maximo de caracterers
                         })}
                     />
 
