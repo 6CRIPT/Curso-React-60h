@@ -48,4 +48,6 @@ Proyecto 10:
 5)  ```npm i react-swipeable-list``` --> ```npm install prop-types``` (los swipe hacia los lados para dispatchs)
 6)  ```npm i react-circular-progressbar``` (ciruculo de progreso)
 7)  ```npm i react-hook-form``` (hook para formularios)
+8)  ```npm install zustand``` (zustand)
+9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
 
