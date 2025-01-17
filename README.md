@@ -8,7 +8,7 @@ Proyecto 2 (calculadora de propinas y pedidos): https://calculadora-propinas-ces
 
 Proyecto 3 (calculadora de calorias, importante useReducer y localStorage): https://calorie-tracker-cesar.netlify.app/
 
-Proyecto 4:
+Proyecto 4 (contador de gastos, con contextApi y reducer): https://context-api-control-gastos.netlify.app/
 
 Proyecto 5:
 
@@ -47,4 +47,5 @@ Proyecto 10:
 4)  ```npm i uuid``` (para generar ID unicas)
 5)  ```npm i react-swipeable-list``` --> ```npm install prop-types``` (los swipe hacia los lados para dispatchs)
 6)  ```npm i react-circular-progressbar``` (ciruculo de progreso)
+7)  ```npm i react-hook-form``` (hook para formularios)
 
