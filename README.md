@@ -49,4 +49,5 @@ Proyecto 10:
 6)  ```npm i react-circular-progressbar``` (ciruculo de progreso)
 7)  ```npm i react-hook-form``` (hook para formularios)
 8)  ```npm install zustand``` (zustand)
+9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
 
