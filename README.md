@@ -14,7 +14,7 @@ Proyecto 5 (gestor de pacientes, CLAVE!!! NOTIFICACIONES Y ZUSTAND!!): https://c
 
 Proyecto 6 (web para consultar climas, CLAVE!! USAR APIS Y LOS SPINNER!!!): https://hace-fresquito.netlify.app/
 
-Proyecto 7:
+Proyecto 7 (consultar cryptos, APis...): https://cryptoconsultant.netlify.app/
 
 Proyecto 8:
 
