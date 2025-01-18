@@ -50,4 +50,5 @@ Proyecto 10:
 7)  ```npm i react-hook-form``` (hook para formularios)
 8)  ```npm install zustand``` (zustand)
 9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
+10)  ```npm i axios``` (axios, para llamadas a apis m´ss simples)
 
