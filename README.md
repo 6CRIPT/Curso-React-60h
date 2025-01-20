@@ -16,7 +16,7 @@ Proyecto 6 (web para consultar climas, CLAVE!! USAR APIS Y LOS SPINNER!!!): http
 
 Proyecto 7 (consultar cryptos, zustand, zod y APis...): https://cryptoconsultant.netlify.app/
 
-Proyecto 8:
+Proyecto 8 (carta de bebidas, CLAVE, enrutamiento, spinners mientras cargas las rutas, slices!! busca clave!): https://carta-de-cocteles.netlify.app/
 
 Proyecto 9:
 
@@ -50,5 +50,5 @@ Proyecto 10:
 7)  ```npm i react-hook-form``` (hook para formularios)
 8)  ```npm install zustand``` (zustand)
 9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
-10)  ```npm i axios``` (axios, para llamadas a apis m´ss simples)
+10)  ```npm i axios``` (axios, para llamadas a apis más simples)
 
