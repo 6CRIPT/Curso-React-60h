@@ -14,7 +14,7 @@ export default function Header() {
 
     const isHome = useMemo(() => pathname === '/', [pathname]) // para saber si estamos en la pagina de inicio
 
-    const {fetchCategories,categories, searchRecipes} = useAppStore()
+    const {fetchCategories,categories, searchRecipes, showNotification} = useAppStore()
 
     useEffect(() => { // cuando carga la app, llamamos a la funcion que llama a la API para obtener las categorias.
         fetchCategories()
@@ -29,9 +29,13 @@ export default function Header() {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        //TODO: VALIDAR
+
         if(Object.values(searchFilters).includes('')){
             //todos los campos son obligatorios
+            showNotification({
+                text: 'Todos los campos son obligatorios',
+                error: true
+            })
             return
         }
 
