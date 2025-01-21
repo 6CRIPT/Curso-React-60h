@@ -31,6 +31,11 @@ Proyecto 10:
 ## Comando para lanzar un proyecto
 ``` npm run dev ```
 
+# Recuerda
+Tanto las funciones que llamen a APIS como las que consulten o modifiquen una base de datos han de ser siempre async. Así tambien cualquier función que llame a una función async debería ser async también.
+
+# Frontend
+
 ## Instalar tailwindCSS en un proyecto
 1) ```npm i -D tailwindcss postcss autoprefixer``` 
 2) ``` npm i -D tailwindcss postcss autoprefixer  ``` 
