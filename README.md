@@ -59,5 +59,5 @@ Proyecto 10:
 
 ## Útiles backend
 1)  ```npm i -D typescript ts-node``` (para poder usar TS)
-2)  
+2)  ```npm i dotenv``` (para variables de entorno)
 
