@@ -52,7 +52,7 @@ Proyecto 10:
 9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
 10)  ```npm i axios``` (axios, para llamadas a apis más simples)
 
-#Backend
+# Backend
 Crear el proyecto Express:
 Para poder usar TS, instala la dependencia 1) y despues elimina de package.json la linea de module y crea un archivo vacío llamado tsconfig.json
 
