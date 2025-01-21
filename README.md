@@ -53,8 +53,9 @@ Proyecto 10:
 10)  ```npm i axios``` (axios, para llamadas a apis más simples)
 
 # Backend
-Crear el proyecto Express:
-Para poder usar TS, instala la dependencia 1) y despues elimina de package.json la linea de module y crea un archivo vacío llamado tsconfig.json
+1) Crear el proyecto:
+2) Para poder usar TS, instala la dependencia 1) y despues elimina de package.json la linea de module y crea un archivo vacío llamado tsconfig.json
+3) Instalar Express: ```npm i express``` --> ``` npm i -D @types/express```
 
 ## Útiles backend
 1)  ```npm i -D typescript ts-node``` (para poder usar TS)
