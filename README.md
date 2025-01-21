@@ -40,7 +40,7 @@ Proyecto 10:
 @tailwind components;
 @tailwind utilities;```
 
-## Útiles
+## Útiles frontend
 1)  ```npm i @headlessui/react``` (para ventanas modales)
 2)  ```npm i @heroicons/react``` (para iconos)
 3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
@@ -51,4 +51,12 @@ Proyecto 10:
 8)  ```npm install zustand``` (zustand)
 9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
 10)  ```npm i axios``` (axios, para llamadas a apis más simples)
+
+#Backend
+Crear el proyecto Express:
+Para poder usar TS, instala la dependencia 1) y despues elimina de package.json la linea de module y crea un archivo vacío llamado tsconfig.json
+
+## Útiles backend
+1)  ```npm i -D typescript ts-node``` (para poder usar TS)
+2)  
 
