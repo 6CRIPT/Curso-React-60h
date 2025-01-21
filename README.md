@@ -65,4 +65,5 @@ Tanto las funciones que llamen a APIS como las que consulten o modifiquen una ba
 ## Útiles backend
 1)  ```npm i -D typescript ts-node``` (para poder usar TS)
 2)  ```npm i dotenv``` (para variables de entorno)
+3)  ``` npm i express-validator``` (para validar consultas o creaciones en la base de datos)
 
