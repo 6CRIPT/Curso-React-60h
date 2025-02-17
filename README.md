@@ -37,13 +37,8 @@ Tanto las funciones que llamen a APIS como las que consulten o modifiquen una ba
 # Frontend
 
 ## Instalar tailwindCSS en un proyecto
-1) ```npm i -D tailwindcss postcss autoprefixer``` 
-2) ``` npm i -D tailwindcss postcss autoprefixer  ``` 
-3) ```npx tailwindcss init -p``` 
-4) En tailwind.config ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],``` 
-5) En index.css pon ```@tailwind base;
-@tailwind components;
-@tailwind utilities;```
+1) ```npm install tailwindcss @tailwindcss/vite``` 
+2) and so on: https://tailwindcss.com/docs/installation/using-vite
 
 ## Útiles frontend
 1)  ```npm i @headlessui/react``` (para ventanas modales)
