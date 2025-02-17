@@ -31,16 +31,16 @@ Proyecto 10:
 ## Comando para lanzar un proyecto
 ``` npm run dev ```
 
-## Instalar tailwindCSS en un proyecto
-1) ```npm i -D tailwindcss postcss autoprefixer``` 
-2) ``` npm i -D tailwindcss postcss autoprefixer  ``` 
-3) ```npx tailwindcss init -p``` 
-4) En tailwind.config ```content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],``` 
-5) En index.css pon ```@tailwind base;
-@tailwind components;
-@tailwind utilities;```
+# Recuerda
+Tanto las funciones que llamen a APIS como las que consulten o modifiquen una base de datos han de ser siempre async. Así tambien cualquier función que llame a una función async debería ser async también.
 
-## Útiles
+# Frontend
+
+## Instalar tailwindCSS en un proyecto
+1) ```npm install tailwindcss @tailwindcss/vite``` 
+2) and so on: https://tailwindcss.com/docs/installation/using-vite
+
+## Útiles frontend
 1)  ```npm i @headlessui/react``` (para ventanas modales)
 2)  ```npm i @heroicons/react``` (para iconos)
 3)  ```npm i react-date-picker``` --> ``` npm i react-calendar``` (fechas)
@@ -51,4 +51,14 @@ Proyecto 10:
 8)  ```npm install zustand``` (zustand)
 9)  ```npm i react-toastify ``` (CLAVE!! LAS ALERTAS DE COLORES)
 10)  ```npm i axios``` (axios, para llamadas a apis más simples)
+
+# Backend
+1) Crear el proyecto:
+2) Para poder usar TS, instala la dependencia 1) y despues elimina de package.json la linea de module y crea un archivo vacío llamado tsconfig.json
+3) Instalar Express: ```npm i express``` --> ``` npm i -D @types/express```
+
+## Útiles backend
+1)  ```npm i -D typescript ts-node``` (para poder usar TS)
+2)  ```npm i dotenv``` (para variables de entorno)
+3)  ``` npm i express-validator``` (para validar consultas o creaciones en la base de datos)
 
