@@ -2,7 +2,9 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "lib": ["esnext"],
+        "lib": [
+            "esnext"
+        ],
         "target": "ESNext", // esto es para guardar en la base de datos (en product)
         "moduleResolution": "NodeNext", // esto es para guardar en la base de datos (en product)
         "module": "NodeNext", // esto es para guardar en la base de datos (en product)
@@ -13,5 +15,7 @@
         "experimentalDecorators": true, //para los decoradores
         "emitDecoratorMetadata": true //para los decoradores
     },
-    "include": ["src/**/*.ts"]
+    "include": [
+        "src/**/*.ts"
+    ]
 }

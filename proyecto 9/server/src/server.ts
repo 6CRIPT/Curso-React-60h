@@ -2,6 +2,7 @@ import express from "express";
 import router from "./router";
 import db from './config/db'
 import colors from 'colors'
+import cors, {CorsOptions} from 'cors'
 
 //Conectar a base de datos
 async function connectDB() {
@@ -20,6 +21,18 @@ connectDB()
 
 //instancia de express
 const server = express() // funcion basica a la que añadir toda la config del proyecto
+
+//permitir conexiones con cors solo de ciertos dominios, para evitar que nadie pueda interactuar con la API y por tanto la base de datos de forma maliciosa
+const corsOptions: CorsOptions = {
+    origin: function(origin, callback){
+        if(origin === process.env.FRONTEND_URL){
+            callback(null, true) // null porque no hay un error xd clase 412, y true porque queremos permitir la conexion.
+        } else {
+            callback(new Error('Error de CORS'))
+        }
+    }
+}
+server.use(cors(corsOptions))
 
 //Leer los datos de formularios
 server.use(express.json()) //esta funcion nos habilita la lectura de JSONs por parte de nuestra api
